@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_of_book_card"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/book_cover"
+        android:layout_width="@dimen/width_of_book"
+        android:layout_height="@dimen/height_of_book_card"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        tools:src="@android:color/black"
+        android:contentDescription="@string/book_cover" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/book_title"
+            style="@style/BookInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:textSize="@dimen/title_size"
+            tools:text="Inferno" />
+
+        <TextView
+            android:id="@+id/book_authors"
+            style="@style/BookInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:textSize="@dimen/authors_size"
+            tools:text="Dan Brown" />
+
+    </LinearLayout>
+</LinearLayout>

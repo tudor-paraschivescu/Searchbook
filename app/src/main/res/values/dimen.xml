@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_of_book_card">150dp</dimen>
+    <dimen name="width_of_book">100dp</dimen>
+    <dimen name="small_margin">6dp</dimen>
+    <dimen name="medium_margin">12dp</dimen>
+    <dimen name="title_size">18sp</dimen>
+    <dimen name="authors_size">16sp</dimen>
+    <dimen name="custom_actionbar_height">64dp</dimen>
+    <dimen name="button_dimen">36dp</dimen>
+    <dimen name="divider_height">10sp</dimen>
+</resources>

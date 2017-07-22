@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Searchbook</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="no_books_found">No books found</string>
+    <string name="search">Search Google Books Library…</string>
+    <string name="google_books_starting_query">https://www.googleapis.com/books/v1/volumes?q=</string>
+    <string name="search_button_image">Search button image</string>
+    <string name="book_cover">Book Cover</string>
+</resources>
