@@ -22,24 +22,12 @@ public class BookAdapter extends ArrayAdapter<Book> {
         super(context, 0, books);
     }
 
-    private class ViewHolder {
-        Book mBook;
-
-        void setBook(Book book) {
-            mBook = book;
-        }
-    }
-
     @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
         View listItemView = convertView;
-/*        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
-        }
-*/
+
         // Get the book placed at that position
         Book book = getItem(position);
 
@@ -71,6 +59,14 @@ public class BookAdapter extends ArrayAdapter<Book> {
         authorsTextView.setText(book.getAuthors());
 
         return listItemView;
+    }
+
+    private class ViewHolder {
+        Book mBook;
+
+        void setBook(Book book) {
+            mBook = book;
+        }
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {

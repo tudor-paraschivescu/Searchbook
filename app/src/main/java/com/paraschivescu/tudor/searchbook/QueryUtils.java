@@ -115,6 +115,12 @@ public final class QueryUtils {
         try {
 
             JSONObject baseJsonResponse = new JSONObject(json);
+
+            // Check if "items" array exists
+            if (!baseJsonResponse.has("items")) {
+                return books;
+            }
+
             JSONArray itemsArray = baseJsonResponse.getJSONArray("items");
 
             for (int i = 0; i < itemsArray.length(); i++) {
@@ -124,10 +130,16 @@ public final class QueryUtils {
 
                 String title = volumeInfo.getString("title");
 
-                JSONArray authorsArray = volumeInfo.getJSONArray("authors");
-                String[] authors = new String[authorsArray.length()];
-                for (int j = 0; j < authorsArray.length(); j++) {
-                    authors[j] = authorsArray.getString(j);
+                // Check if "authors" array exists
+                String[] authors;
+                if (baseJsonResponse.has("authors")) {
+                    JSONArray authorsArray = volumeInfo.getJSONArray("authors");
+                    authors = new String[authorsArray.length()];
+                    for (int j = 0; j < authorsArray.length(); j++) {
+                        authors[j] = authorsArray.getString(j);
+                    }
+                } else {
+                    authors = new String[]{"Authors N/A"};
                 }
 
                 JSONObject imageLinksArray = volumeInfo.getJSONObject("imageLinks");
